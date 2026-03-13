@@ -1,0 +1,17 @@
+# Ignora a pasta de dependências do Node.js (muito pesada)
+node_modules/
+
+# Ignora as pastas de plataformas nativas geradas pelo Capacitor
+# Elas devem ser geradas localmente por quem for compilar o app
+android/
+ios/
+
+# Ignora arquivos de log de erros do gerenciador de pacotes
+npm-debug.log
+yarn-error.log
+yarn.lock
+package-lock.json
+
+# Ignora arquivos temporários do sistema operacional (Windows/macOS)
+.DS_Store
+Thumbs.db
