@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/* Configuração global com adição de imagem de fundo */
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Adiciona a imagem de fundo buscando de uma URL externa */
+    background-image: url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1920&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Contêiner principal com fundo levemente transparente para contrastar com a imagem */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #1a1a1a;
+}
+
+.split-options {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.split-options p {
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.split-options label {
+    margin-right: 15px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: #3b82f6;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    margin-bottom: 15px;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.add-btn {
+    background-color: #00ca4a;
+    color: #ffffff;
+}
+
+.add-btn:hover {
+    background-color: #e5e7eb;
+}
+
+.calc-btn {
+    background-color: #3b82f6;
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+.calc-btn:hover {
+    background-color: #2563eb;
+}
+
+/* Atualização no layout do item para acomodar o botão de exclusão alinhado ao centro verticalmente */
+.person-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9fafb;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* Área de informações do texto separada do botão */
+.person-info {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+/* Estilização específica para o botão de exclusão */
+.delete-btn {
+    width: auto;
+    padding: 6px 10px;
+    margin-bottom: 0;
+    background-color: #ef4444;
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.delete-btn:hover {
+    background-color: #dc2626;
+}
+
+.tax-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed #d1d5db;
+}
+
+.tax-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+#result-section {
+    margin-top: 25px;
+    background-color: #f0fdf4;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #bbf7d0;
+    display: none;
+}
+
+#result-section h3 {
+    margin-top: 0;
+    font-size: 16px;
+    color: #166534;
+}
+
+#result-section p {
+    margin: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #15803d;
+    border-bottom: 1px solid #dcfce7;
+    padding-bottom: 8px;
+}
+
+#result-section h4 {
+    margin-bottom: 0;
+    margin-top: 15px;
+    font-size: 18px;
+    color: #166534;
+    text-align: right;
+}

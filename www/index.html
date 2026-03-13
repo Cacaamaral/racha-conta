@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racha Conta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Racha Conta</h1>
+
+        <div class="split-options">
+            <p>Método de divisão:</p>
+            <label>
+                <input type="radio" name="split-type" value="proportional" checked> 
+                Proporcional
+            </label>
+            <label>
+                <input type="radio" name="split-type" value="equal"> 
+                Igualitária
+            </label>
+        </div>
+
+        <div class="controls">
+            <input type="text" id="person-name" placeholder="Nome da pessoa">
+            <input type="number" id="person-amount" placeholder="Valor dos pedidos (R$)">
+            <button onclick="addPerson()" class="add-btn">Adicionar Pessoa</button>
+        </div>
+
+        <div id="people-section"></div>
+
+        <div class="tax-section">
+            <label for="tip-percentage">Gorjeta / Taxas (%):</label>
+            <input type="number" id="tip-percentage" value="10" placeholder="Ex: 10">
+        </div>
+
+        <button onclick="calculateSplit()" class="calc-btn">Calcular Divisão</button>
+
+        <div id="result-section"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
