@@ -3,31 +3,48 @@ let people = [];
 
 /**
  * Captura, valida e adiciona uma pessoa ao array de estado.
+ * Agora inclui verificação de duplicidade de nomes para somar valores.
  */
 function addPerson() {
     const nameInput = document.getElementById('person-name');
     const amountInput = document.getElementById('person-amount');
 
+    // Extrai o nome removendo espaços em branco nas extremidades
     const name = nameInput.value.trim();
+    // Converte o valor inserido para um número decimal
     const amount = parseFloat(amountInput.value);
 
-    // Valida se os campos foram preenchidos corretamente
+    // Valida se os campos foram preenchidos corretamente e com valores lógicos
     if (name === '' || isNaN(amount) || amount < 0) {
         alert('Por favor, insira um nome válido e o valor consumido.');
         return;
     }
 
-    // Armazena no array global
-    people.push({ name: name, amount: amount });
+    // Busca no array global se já existe uma pessoa com o nome inserido.
+    // Converte ambos os nomes para minúsculas (toLowerCase) para evitar que 
+    // "João" e "joão" sejam tratados como duas pessoas diferentes.
+    const existingIndex = people.findIndex(
+        person => person.name.toLowerCase() === name.toLowerCase()
+    );
 
-    // Reseta os campos
+    // O método findIndex retorna -1 se não encontrar nada.
+    // Se retornar um valor diferente de -1, significa que a pessoa já existe na lista.
+    if (existingIndex !== -1) {
+        // Acessa o objeto da pessoa existente e soma o novo valor ao montante atual
+        people[existingIndex].amount += amount;
+    } else {
+        // Caso não exista, cria um novo objeto e insere no array
+        people.push({ name: name, amount: amount });
+    }
+
+    // Reseta os campos de entrada de texto no HTML para facilitar a próxima inserção
     nameInput.value = '';
     amountInput.value = '';
 
-    // Atualiza a visualização da lista
+    // Chama a função que reconstrói a lista visual na tela com os dados atualizados
     renderPeople();
 
-    // Oculta a área de resultados sempre que um novo dado é inserido
+    // Oculta a área de resultados para forçar o usuário a clicar em "Calcular Divisão" novamente
     document.getElementById('result-section').style.display = 'none';
 }
 
